@@ -15,7 +15,7 @@ services:
     command: sleep infinity
     environment:
       DATABASE_URI: "postgres://postgres:postgres@postgres:5432/postgres"
-      FASK_APP: services:app
+      FASK_APP: "services:app"
     networks:
       - dev
     depends_on:

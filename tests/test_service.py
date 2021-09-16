@@ -9,7 +9,7 @@ import os
 import logging
 from unittest import TestCase
 from unittest.mock import MagicMock, patch
-from flask_api import status  # HTTP Status Codes
+from service import status  # HTTP Status Codes
 from tests.factories import AccountFactory, AddressFactory
 from service.models import db
 from service.service import app, init_db
