@@ -13,8 +13,8 @@ from flask import Flask
 app = Flask(__name__)
 app.config.from_object('config')
 
-# Import the rutes After the Flask app is created
-from service import service, models
+# Import the routes After the Flask app is created
+from . import routes, models
 
 # Set up logging for production
 if __name__ != '__main__':
@@ -34,7 +34,7 @@ app.logger.info("  A C C O U N T   S E R V I C E   R U N N I N G  ".center(70, "
 app.logger.info(70 * "*")
 
 try:
-    service.init_db()  # make our sqlalchemy tables
+    routes.init_db()  # make our sqlalchemy tables
 except Exception as error:
     app.logger.critical("%s: Cannot continue", error)
     # gunicorn requires exit code 4 to stop spawning workers when they die

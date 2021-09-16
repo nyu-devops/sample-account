@@ -12,7 +12,7 @@ from unittest.mock import MagicMock, patch
 from service import status  # HTTP Status Codes
 from tests.factories import AccountFactory, AddressFactory
 from service.models import db
-from service.service import app, init_db
+from service.routes import app, init_db
 
 # DATABASE_URI = os.getenv('DATABASE_URI', 'sqlite:///../db/test.db')
 DATABASE_URI = os.getenv(
