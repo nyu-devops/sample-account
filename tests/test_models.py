@@ -231,7 +231,7 @@ class TestAccount(unittest.TestCase):
         self.assertEqual(len(accounts), 1)
 
         new_account = Account.find(account.id)
-        self.assertEqual(account.addresses[0].name, address.name)
+        self.assertEqual(new_account.addresses[0].name, address.name)
 
         address2 = self._create_address()
         account.addresses.append(address2)
